@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println(Input.getPersonFromUser(input));
+        Input inputTest = new Input();
+
+        System.out.println(inputTest.getPersonFromUser(input));
     }
 }

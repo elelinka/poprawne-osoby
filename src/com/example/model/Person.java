@@ -1,5 +1,8 @@
 package com.example.model;
 
+import com.example.exception.IncorrectAgeException;
+import com.example.exception.NameUndefinedException;
+
 public class Person {
 
     private String firstName;
@@ -11,6 +14,11 @@ public class Person {
     }
 
     public Person(String firstName, String lastName, int age, String pesel) {
+        if (firstName == null || lastName == null || firstName.length() < 2 || lastName.length() < 2) {
+            throw new NameUndefinedException();
+        } else if (age < 1) {
+            throw new IncorrectAgeException();
+        }
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
